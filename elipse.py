@@ -1,24 +1,30 @@
 from numpy import *
-import matplotlib.pyplot as plot
-
-E = 0.4
-R = 105
-
+import matplotlib.pyplot as plt
+from mathdefs import *
 
 def plotElipse(start, end):
-    positions = [elipsePosition(angle) for angle in arange(start, end, 0.01)]
+    positions = [position(angle) for angle in arange(start, end, 0.01)]
     x, y = [x for x,_ in positions], [y for _,y in positions]
-    plot.plot(x,y)
-    plot.axhline(0, color="grey")
-    plot.axvline(0, color="grey")
-    plot.show()
+    plt.plot(x,y) # elipse
+    plt.axhline(0, color="grey")
+    plt.axvline(0, color="grey")
+    
+    current = 2*pi/3
+    
+    x, y = position(current)
+    plt.plot(x, y, 'rs') # kometen
+    plt.plot(0, 0, 'yo') # solen    
+    
+    d = direction(current)
+    dl = linalg.norm(d)
+    d = (d[0] / dl, d[1] / dl)
+    #~ length_of_line = 50
+    #~ plt.plot([x + d[0] * l for l in xrange(length_of_line)],[y + d[1] * l for l in xrange(length_of_line)])
+    
+    
+    plt.show()
 
-def elipseRadius(angle):
-    return R/(1+E*cos(angle))
 
-def elipsePosition(angle):
-    r = elipseRadius(angle)
-    return (r*cos(angle),r*sin(angle))
 
 def main():
     plotElipse(0,2*pi)
