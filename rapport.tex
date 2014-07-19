@@ -1,0 +1,66 @@
+\documentclass[11pt,twoside]{article}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+%~ \usepackage{amsmath}
+\usepackage{amscd}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{url}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{mathtools}
+\usepackage[a4paper,margin=2.5cm,hmarginratio=1:1]{geometry}
+\usepackage{graphicx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% ENTER YOUR PERSONAL INFORMATION HERE %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Your name, personal number, and email.
+\newcommand{\firstname}{Joakim}
+\newcommand{\lastnames}{Uddholm Hjalmarsson}
+\newcommand{\persnr}{911001-3290}
+\newcommand{\email}{joakim@uddholm.com}
+
+
+% Your two study pals. Leave empty as necessary.
+\newcommand{\studypalX}{Jo Tryti}
+\newcommand{\studypalXemail}{tryti@kth.se}
+\newcommand{\studypalY}{}
+\newcommand{\studypalYemail}{}
+
+
+\title{Kometens Stoftsvans}
+\author{Joakim Uddholm, juddholm@kth.se, 9110013290 \\
+		Jo Tryti, tryti@kth.se, 8612050438}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Problembeskrivning}
+
+
+\section{Kometens bana}
+
+\section{Kometens riktning}	
+Med radien $r(\phi)$ fås en positionsvektor $P(\phi)$.
+\begin{equation}
+	P(\phi) = \begin{cases}
+	x = r(\phi) cos(\phi) \\
+	y = r(\phi) sin(\phi)
+	\end{cases}
+\end{equation}
+Deriveras ovan funktion ges riktningen $k$ som en funktion av $\phi$. 
+\begin{equation}
+	k = \begin{cases}
+	x = r'(\phi) cos(\phi) - r(\phi) sin(\phi) \\
+	y = r'(\phi) sin(\phi) + r(\phi) cos(\phi)
+	\end{cases}
+\end{equation}
+
+
+\end{document}
