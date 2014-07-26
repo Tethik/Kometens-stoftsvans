@@ -9,7 +9,8 @@ def direction(angle):
 	r = radius(angle)
 	c = cos(angle)
 	s = sin(angle)
-	return (rp * c - r * s, rp * s + r * c)
+	d = [rp * c - r * s, rp * s + r * c]
+	return d / linalg.norm(d)
 
 def radiusDeriv(angle):
 	return R * (E * sin(angle)) / ((1 + E * cos(angle))**2)
@@ -19,4 +20,4 @@ def radius(angle):
 
 def position(angle):
     r = radius(angle)
-    return (r*cos(angle),r*sin(angle))
+    return [r*cos(angle),r*sin(angle)]
