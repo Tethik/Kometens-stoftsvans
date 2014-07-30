@@ -20,10 +20,13 @@ def plot(C, angle, V0, tmax):
 	print v0
 	print z0
 	
+	b = True
 	# (u, k)
 	def z_bis(z, t):
+		#~ print z
+	
 		x,y,dx,dy = z				
-		d = -C / (sqrt(dx**2 + dy**2)**3)
+		d = -C / (sqrt(x**2 + y**2)**3)
 		return [dx, dy, x * d, y * d]
 	
 	t_output = np.arange(0, tmax, 0.01)
@@ -35,14 +38,20 @@ def plot(C, angle, V0, tmax):
 		#~ z += inner(v, h)
 	
 	z = integrate.odeint(z_bis, [z0[0],z0[1],v0[0],v0[1]], t_output)		
-	print z
+	#~ print z
 		
 	x = [k for k,_,_,_ in z]
 	y = [r for _,r,_,_ in z]
-	print z
+	#~ print z
 	fig, ax = plt.subplots()
 	ax.plot(x, y)
+	
+	#~ positions = [position(angle) for angle in np.arange(0,2*pi, 0.01)]
+	#~ x, y = [x for x,_ in positions], [y for _,y in positions]
+	#~ ax.plot(0,2*pi) # elipse
+	
 	ax.plot(75, 0, 'x')
+	ax.plot(0, 0, 'yo') # solen   
 	ax.set_aspect('equal')
 	plt.grid(True)
 	plt.show()
@@ -61,8 +70,6 @@ def plotSvans(start, end):
 	
 	
 	plt.plot(x, y, 'rs') # kometen   
-	
-	
 	plt.plot(0, 0, 'yo') # solen    
 		
 	plt.show()
@@ -79,7 +86,7 @@ def main():
 	#~ plotSvans(0,2*pi)
 	C = 1
 	
-	plot(C, 2*pi/3, 0.265, 1000)
+	plot(C, 2*pi/3, -0.085, 8700)
 	
 
 if __name__ == '__main__':
