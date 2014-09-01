@@ -11,6 +11,7 @@
 \usepackage{fancyhdr}
 \usepackage[a4paper,margin=2.5cm,hmarginratio=1:1]{geometry}
 \usepackage{graphicx}
+\usepackage{pdfpages}
 
 \title{Kometens Stoftsvans}
 \author{Joakim Uddholm, juddholm@kth.se, 9110013290 \\
@@ -20,8 +21,7 @@
 \begin{document}
 \maketitle
 \newpage
-\section{Problembeskrivning}
-
+\includepdf[pages=22]{Lab3BuppgJO.pdf}
 
 \section{Kometens bana}
 
@@ -41,8 +41,6 @@ Med derivatan som vi senare kommer använda för kometens riktning
 \begin{equation}
     r'(\phi)=\frac{42}{(1-0.4\cos\phi)^2}
 \end{equation}
-
-\\
 
 \section{Kometens riktning}	
 Med radien $r(\phi)$ fås en positionsvektor $P(\phi)$.
