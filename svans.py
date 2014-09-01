@@ -26,9 +26,9 @@ def plot(z, stoftar):
 	fig, ax = plt.subplots()
 	ax.plot(x, y)
 	
-	for stoft in stoftar:
+	for stoft in stoftar: 
 		for i in xrange(1,10):
-			ax.plot(stoft[len(stoft)-i*100][0], stoft[len(stoft)-i*100][1], 'rx')
+			ax.plot(stoft[len(stoft)-i*100][0], stoft[len(stoft)-i*100][1], 'rx', alpha=1.0 - (0.1*i))
 	
 	ax.plot(75, 0, 'x')
 	ax.plot(0, 0, 'yo') # solen   
@@ -46,8 +46,7 @@ def main():
 		prev = abs(y)
 		i = 1
 		while y >= 0 and i < len(curve):
-			x, y, _, _ = curve[i]
-			#~ print x,y
+			x, y, _, _ = curve[i]			
 			i += 1
 		i -= 1
 		return (i,curve[i])
