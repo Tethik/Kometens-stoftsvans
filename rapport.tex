@@ -42,6 +42,9 @@ Med derivatan som vi senare kommer använda för kometens riktning
     r'(\phi)=\frac{42}{(1-0.4\cos\phi)^2}
 \end{equation}
 
+Så här ser elipsen ut när vi ritar ut den.
+\includegraphics[width=300pt]{imgs/elipse.png}
+
 \section{Kometens riktning}	
 Med radien $r(\phi)$ fås en positionsvektor $P(\phi)$.
 \begin{equation}
@@ -58,12 +61,19 @@ Den partiella derivatan av ovanstående funktion ger riktningen $k$ som en funkt
 	\end{cases}
 \end{equation}
 
-\section{Randvärdet kometens hastighet}
+\section{Integrering för att lösa Differentialekvationen}
+Vi använder RK4 (Runge-Kutta) för att lösa differentialekvationen och stega oss fram genom kometens bana.
 
+
+\section{Randvärdet kometens hastighet}
 
 
 \section{Stoftpartiklarna}
 
+Till slut använder vi samma funktioner för att stega genom Stoftpartiklarnas banor och plottar dem på samma figur.
+I figure är kryssen stoftpartiklarna. Man ser hur de avviker från kometens bana med olika banor beroende på $C$-värde. Stoftpartiklarna med $C$-värden mindre än 0 ser också
+ut att vara utåtkrökta som enligt beskrivningen.
 
+\includegraphics[width=300pt]{imgs/svans.png}
 
 \end{document}
