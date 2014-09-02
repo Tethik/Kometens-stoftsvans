@@ -43,7 +43,7 @@ Med derivatan som vi senare kommer använda för kometens riktning
     r'(\phi)=\frac{42}{(1-0.4\cos\phi)^2}
 \end{equation}
 
-Så här ser elipsen ut när vi ritar ut den.\\
+Så här ser elipsen ut när vi ritar ut den. Gula punkten är solens position och den röda punkten är kometens startposition.\\
 \includegraphics[width=300pt]{imgs/elipse.png}
 
 \section{Kometens riktning}	
@@ -126,11 +126,11 @@ Följande dump visar varje iterationssteg.
 t = 1816
 \end{lstlisting}
 
-Det känns som att det borde finnas ett mer "matematiskt" sätt att beräkna detta. Tex med Newton-Raphson eller liknande. Vi får hur som helst ut värden på tiden $t$ och hastigheten $v$.
+Det är kanske möjligt att lösa med tex med Newton-Raphson men intervallhalvering fungerar det med. Vi får ut värden på tiden $t$ och hastigheten $v$.
 
 \section{Stoftpartiklarna}
 
-Till slut använder vi samma funktioner för att stega genom Stoftpartiklarnas banor och plottar dem på samma figur. Vi behöver bara byta $C$ värden.
+Till slut använder vi samma funktioner för att stega genom Stoftpartiklarnas banor och plottar dem tillsammans med kometen på samma figur. Vi behöver bara byta $C$ värden.
 I figure är kryssen stoftpartiklarna. Man ser hur de avviker från kometens bana med olika banor beroende på $C$-värde. Stoftpartiklarna med $C$-värden mindre än 0 ser också
 ut att vara utåtkrökta som enligt beskrivningen.
 
