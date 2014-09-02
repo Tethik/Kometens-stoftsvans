@@ -26,27 +26,28 @@
 
 \section{Kometens bana}
 
-\subsection{Kometens radie}
-Radien för en komets eliptiska bana fås av:
-\begin{equation}
-    r(\phi)=\frac{R}{1-E\cos\phi}
-\end{equation}
-I vår fall undersöker vi den specifika banan som fås utav:
-\begin{equation}
-	\begin{split}
-     R = 105, E = 0.4, 0 \leq \phi \leq 2\pi \\
+
+Vår specifika komet banan fås utav ekv~\eqref{eq:kometens-elipse} och kan ses i Figure~\ref{fig:kometens-elipse}. Kometbanas figur är gjort med bibloteket matplotlib i python2. 
+Vi deriverar även ekv~\eqref{eq:kometens-elipse} och får ekv~\eqref{eq:kometens-elipse-derivata} som senare kommer användas för beräkning av kometens riktnings vektor.
+
+%Specifik elipse ekv
+\begin{equation} \label{eq:kometens-elipse}
      r(\phi)=\frac{105}{1-0.4\cos\phi}
      \end{split}
 \end{equation}
-Med derivatan som vi senare kommer använda för kometens riktning
-\begin{equation}
+
+\begin{equation} \label{eq:kometens-elipse-derivata}
     r'(\phi)=\frac{42}{(1-0.4\cos\phi)^2}
 \end{equation}
 
-Så här ser elipsen ut när vi ritar ut den. Gula punkten är solens position och den röda punkten är kometens startposition.\\
-\includegraphics[width=300pt]{imgs/elipse.png}
 
-\section{Kometens riktning}	
+\begin{figure}[h!] 
+	\label{fig:kometens-elipse}
+	\includegraphics[width=300pt]{imgs/elipse.png}
+  	\caption{Kometens bana med kometen utmarkerad vid vinkeln $2\pi/3$.}
+\end{figure}
+
+\section{Kometens riktning}
 Med radien $r(\phi)$ fås en positionsvektor $P(\phi)$.
 \begin{equation}
 	P(\phi) = \begin{cases}
