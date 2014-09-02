@@ -12,21 +12,17 @@ def generateFrames(t):
 	C = 1
 	curve = generateData(C, angle, v, t)
 	cvals = arange(-1, 0.99, 0.1)
-	stoftar = [generateData(c, angle, v, t) for c in cvals]
-	
-	try:
-		os.mkdir("frames")
-	except:
-		pass
-	
+	stoftar = [generateData(c, angle, v, t) for c in cvals]	
 
 	fig = plt.figure()
 	ax = plt.axes(xlim=(-200,200), ylim=(-200,200))
 	line, = ax.plot([], [])
+	stoftlines = list()
+	for _ in range( len(stoftar)):
+		l, = ax.plot([], [])
+		stoftlines.append(l)
+	#~ print stoftlines
 	
-	for stoft in stoftar: 
-		for i in xrange(1,10):
-			ax.plot(stoft[len(stoft)-i*100][0], stoft[len(stoft)-i*100][1], 'rx', alpha=1.0 - (0.1*i))	
 	ax.plot(0, 0, 'yo') # solen 
 	ax.set_aspect('equal')
 	
@@ -34,6 +30,14 @@ def generateFrames(t):
 		x = [k for k,_,_,_ in curve[:i*50]]
 		y = [r for _,r,_,_ in curve[:i*50]]
 		line.set_data(x,y)
+		
+		
+		for j in xrange(0,len(stoftlines)):
+			stoftline = stoftlines[j]
+			x = [k for k,_,_,_ in stoftar[j][:i*50]]
+			y = [r for _,r,_,_ in stoftar[j][:i*50]]
+			stoftline.set_data(x,y)
+		
 		return line,
 		
 	from matplotlib import animation
